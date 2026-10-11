@@ -14,3 +14,8 @@ Before publishing, replace every `support@chamba.com` with the real support addr
 1. Push to a GitHub repo, then Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
 2. At the DNS host for chamba.com: A records for `@` to 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and a CNAME for `www` to `<user>.github.io`.
 3. Once the certificate is issued, enable "Enforce HTTPS".
+
+## Text signup (signup.html)
+Opt-in page for Chamba Messaging (transactional texts only, no marketing). Both checkboxes are unchecked by default and required.
+
+**TODO: no backend yet.** Submissions are validated in the browser and show a confirmation, but nothing is stored or sent. Set `SIGNUP_ENDPOINT` in signup.html to a handler that records the phone number, both consents, timestamp and IP (proof of consent), then sends the opt-in confirmation text through Twilio.

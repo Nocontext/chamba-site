@@ -17,3 +17,9 @@ h2{font-size:1.2rem;margin:2rem 0 .5rem}
 .muted{color:#666;font-size:.9rem}
 footer{border-top:1px solid #e3e3e3;padding-top:1rem;padding-bottom:2rem;font-size:.85rem;color:#666}
 footer a{color:#666}
+form input[type=text],form input[type=tel]{width:100%;max-width:22rem;padding:.55rem .7rem;font-size:1rem;border:1px solid #c9c9c9;border-radius:8px;margin-top:.25rem}
+.check{display:flex;gap:.6rem;align-items:flex-start}
+.check input{margin-top:.35rem;flex:none;width:1.1rem;height:1.1rem}
+button{background:#0b5cad;color:#fff;border:0;border-radius:8px;padding:.7rem 1.4rem;font-size:1rem;font-weight:600;cursor:pointer}
+button:hover{background:#094a8b}
+.error{color:#b00020}
