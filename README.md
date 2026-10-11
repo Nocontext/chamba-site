@@ -18,4 +18,4 @@ Before publishing, replace every `support@chamba.com` with the real support addr
 ## Text signup (signup.html)
 Opt-in page for Chamba Messaging (transactional texts only, no marketing). Both checkboxes are unchecked by default and required.
 
-**TODO: no backend yet.** Submissions are validated in the browser and show a confirmation, but nothing is stored or sent. Set `SIGNUP_ENDPOINT` in signup.html to a handler that records the phone number, both consents, timestamp and IP (proof of consent), then sends the opt-in confirmation text through Twilio.
+Submissions are emailed to support@chamba.com through FormSubmit (formsubmit.co, free, no account). The email includes name, phone, both consents, the exact consent wording and a timestamp; keep those emails as proof of consent. Visitors then land on thanks.html. FormSubmit needs a one-time activation: the first submission sends an activation email to support@chamba.com that must be confirmed. The enrollment confirmation text is still sent manually or by a later Twilio integration.

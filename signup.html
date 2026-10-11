@@ -16,7 +16,13 @@
     <h1>Sign up for Chamba Messaging texts</h1>
     <p>Chamba Messaging is a transactional text program from Chamba Development, LLC. Messages may be labeled Chamba, BinCard, or LandScope. We send one-time passcodes, account and status notifications, error alerts, reminders, and replies to your questions. We do not send marketing or promotional texts.</p>
 
-    <form id="signup" class="app" action="#" method="post" novalidate>
+    <form id="signup" class="app" action="https://formsubmit.co/support@chamba.com" method="POST">
+      <input type="hidden" name="_subject" value="New Chamba Messaging text signup">
+      <input type="hidden" name="_next" value="https://chamba.com/thanks.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="consent_text" value="I agree to receive text messages from Chamba Messaging (Chamba Development, LLC), including one-time passcodes, account and status notifications, error alerts, reminders, and replies to my questions, at the number above. Message frequency varies. Msg &amp; data rates may apply. Reply HELP for help. Reply STOP to opt out. I agree to the SMS Terms and Conditions and Privacy Policy.">
+      <input type="hidden" name="consented_at" id="consented_at" value="">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <p>
         <label for="name"><strong>Name</strong> (optional)</label><br>
         <input id="name" name="name" type="text" autocomplete="name">
@@ -37,10 +43,6 @@
       <p><button type="submit">Sign up for texts</button></p>
     </form>
 
-    <div id="done" class="app" hidden>
-      <h2 style="margin-top:0">Thanks, you&rsquo;re signed up</h2>
-      <p>You&rsquo;ll receive a text confirming your enrollment in Chamba Messaging. Message frequency varies. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out at any time.</p>
-    </div>
 
     <p class="muted">We do not sell or share your SMS opt-in data or personal information with third parties for marketing purposes. Questions? Email <a href="mailto:support@chamba.com">support@chamba.com</a>.</p>
   </main>
@@ -49,26 +51,16 @@
     <a href="privacy.html">Privacy Policy</a> &middot; <a href="sms-terms.html">SMS Terms and Conditions</a> &middot; <a href="mailto:support@chamba.com">support@chamba.com</a></p>
   </footer>
   <script>
-  // TODO: no backend yet. Submissions are not stored or sent anywhere.
-  // Wire SIGNUP_ENDPOINT to a real handler that records phone, both consents,
-  // timestamp and IP as proof of consent, then sends the opt-in confirmation text via Twilio.
-  const SIGNUP_ENDPOINT = null;
-  document.getElementById('signup').addEventListener('submit', async (e) => {
-    e.preventDefault();
+  // Submissions are emailed to support@chamba.com by FormSubmit (formsubmit.co), then the visitor lands on thanks.html.
+  document.getElementById('signup').addEventListener('submit', (e) => {
     const f = e.target, err = document.getElementById('error');
     const digits = f.phone.value.replace(/\D/g, '');
     let msg = '';
     if (digits.length < 10) msg = 'Please enter a valid mobile phone number.';
     else if (!f.sms_consent.checked) msg = 'Please check the box to agree to receive text messages.';
     else if (!f.terms_consent.checked) msg = 'Please agree to the SMS Terms and Privacy Policy.';
-    if (msg) { err.textContent = msg; err.hidden = false; return; }
-    err.hidden = true;
-    if (SIGNUP_ENDPOINT) {
-      await fetch(SIGNUP_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({name: f.name.value, phone: f.phone.value, sms_consent: true, terms_consent: true, consented_at: new Date().toISOString()})});
-    }
-    f.hidden = true;
-    document.getElementById('done').hidden = false;
+    if (msg) { e.preventDefault(); err.textContent = msg; err.hidden = false; return; }
+    document.getElementById('consented_at').value = new Date().toISOString();
   });
   </script>
 </body>
