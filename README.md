@@ -16,6 +16,6 @@ Before publishing, replace every `support@chamba.com` with the real support addr
 3. Once the certificate is issued, enable "Enforce HTTPS".
 
 ## Text signup (signup.html)
-Opt-in page for Chamba Messaging (transactional texts only, no marketing). Both checkboxes are unchecked by default and required.
+Opt-in page for Chamba Messaging (transactional texts only, no marketing). Contact form; the single SMS consent checkbox is optional and unchecked by default. Consent text and timestamp are sent only when it is checked.
 
 Submissions are emailed to support@chamba.com through Web3Forms (web3forms.com, free plan, 250 submissions/month). The access key in signup.html is public by design: it is an alias for support@chamba.com, not a secret. Each email includes name, phone, both consents, the exact consent wording and a timestamp; keep those emails as proof of consent. Visitors then land on thanks.html. The enrollment confirmation text is still sent manually or by a later Twilio integration.
