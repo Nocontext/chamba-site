@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact and Sign Up | Chamba Development, LLC</title>
-  <meta name="description" content="Contact Chamba Development, LLC about BinCard or LandScope, and optionally opt in to Chamba Messaging text messages.">
+  <title>Contact and Sign Up | Chamba Development, L.L.C.</title>
+  <meta name="description" content="Contact Chamba Development, L.L.C. about BinCard or LandScope, and optionally opt in to Chamba Messaging text messages.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a class="brand" href="index.html">Chamba Development, LLC</a>
+    <a class="brand" href="index.html">Chamba Development, L.L.C.</a>
     <nav><a href="index.html">Home</a><a href="signup.html">Contact &amp; Sign Up</a><a href="privacy.html">Privacy Policy</a><a href="sms-terms.html">SMS Terms</a></nav>
   </header>
   <main>
     <h1>Contact us and sign up</h1>
-    <p>Use this form to request a BinCard or LandScope account, ask a question, or get support from Chamba Development, LLC. We reply by email. If you also want text messages, check the optional box below. Texting is not required to use this form or any of our apps.</p>
+    <p>Use this form to request a BinCard or LandScope account, ask a question, or get support from Chamba Development, L.L.C. We reply by email. If you also want text messages, check the optional box below. Texting is not required to use this form or any of our apps.</p>
 
     <form id="signup" class="app" action="https://api.web3forms.com/submit" method="POST">
       <!-- Web3Forms access key: public by design (an alias for support@chamba.com), safe in page source. -->
@@ -52,7 +52,7 @@
       </p>
       <p class="check">
         <input id="sms_consent" name="sms_consent" type="checkbox" value="yes">
-        <label for="sms_consent" id="sms_consent_label"><strong>Optional:</strong> Text me at the number above. I agree to receive automated text messages from Chamba Messaging (Chamba Development, LLC), including one-time verification codes, account and status alerts, reminders, and replies to my questions. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase or service. <a href="sms-terms.html">SMS Terms</a> &middot; <a href="privacy.html">Privacy Policy</a></label>
+        <label for="sms_consent" id="sms_consent_label"><strong>Optional:</strong> Text me at the number above. I agree to receive automated text messages from Chamba Messaging (Chamba Development, L.L.C.), including one-time verification codes, account and status alerts, reminders, and replies to my questions. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase or service. <a href="sms-terms.html">SMS Terms</a> &middot; <a href="privacy.html">Privacy Policy</a></label>
       </p>
       <p id="error" class="error" role="alert" hidden></p>
       <p><button type="submit">Submit</button></p>
@@ -61,13 +61,13 @@
     <p class="muted">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Questions? Email <a href="mailto:support@chamba.com">support@chamba.com</a>.</p>
   </main>
   <footer>
-    <p>&copy; 2026 Chamba Development, LLC. All rights reserved.<br>
+    <p>&copy; 2026 Chamba Development, L.L.C. All rights reserved.<br>
     <a href="privacy.html">Privacy Policy</a> &middot; <a href="sms-terms.html">SMS Terms and Conditions</a> &middot; <a href="mailto:support@chamba.com">support@chamba.com</a></p>
   </footer>
   <script>
   // Submissions are emailed to support@chamba.com by Web3Forms (web3forms.com), then the visitor lands on thanks.html.
   // The SMS box is optional. Consent text and timestamp are recorded only when it is checked.
-  const CONSENT = 'Optional: Text me at the number above. I agree to receive automated text messages from Chamba Messaging (Chamba Development, LLC), including one-time verification codes, account and status alerts, reminders, and replies to my questions. Msg frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase or service. SMS Terms: https://chamba.com/sms-terms.html. Privacy Policy: https://chamba.com/privacy.html.';
+  const CONSENT = 'Optional: Text me at the number above. I agree to receive automated text messages from Chamba Messaging (Chamba Development, L.L.C.), including one-time verification codes, account and status alerts, reminders, and replies to my questions. Msg frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of any purchase or service. SMS Terms: https://chamba.com/sms-terms.html. Privacy Policy: https://chamba.com/privacy.html.';
   document.getElementById('signup').addEventListener('submit', (e) => {
     const f = e.target, err = document.getElementById('error');
     const optIn = f.sms_consent.checked;

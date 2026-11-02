@@ -1,6 +1,6 @@
 # chamba.com
 
-Static site for Chamba Development, LLC, hosted on GitHub Pages. Plain HTML + CSS, no build step.
+Static site for Chamba Development, L.L.C., hosted on GitHub Pages. Plain HTML + CSS, no build step.
 
 - `index.html` - home page (company, BinCard, LandScope, contact)
 - `privacy.html` - Privacy Policy
